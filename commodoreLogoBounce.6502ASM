@@ -1,0 +1,557 @@
+; Sprites are organized together in a grid
+;    [6][7]
+;    [4][5]
+; [0][1][2][3]
+
+!to "commodoreLogoBounce.prg", cbm  ; Set output file and format
+
+* = $2000
+; Sprite #0
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $7F, $00, $00
+	!byte   $FF, $00, $00
+	!byte   $FF, $80, $00
+	!byte   $E3, $80, $00
+	!byte   $E3, $80, $00
+	!byte   $E0, $0F, $E3
+	!byte   $E0, $1F, $E3
+	!byte   $E0, $1C, $73
+	!byte   $E0, $1C, $73
+	!byte   $E0, $1C, $73
+	!byte   $E0, $1C, $73
+	!byte   $E0, $1C, $73
+	!byte   $E3, $9C, $73
+	!byte   $E3, $9C, $73
+	!byte   $E3, $9C, $73
+	!byte   $FF, $0F, $E3
+	!byte   $7F, $0F, $E3
+
+* = $2040
+; Sprite #1
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $8E, $71, $C7
+	!byte   $8F, $71, $EF
+	!byte   $FF, $7F, $EE
+	!byte   $FF, $7F, $EE
+	!byte   $FF, $7F, $EE
+	!byte   $FF, $7F, $EE
+	!byte   $FF, $7F, $EE
+	!byte   $B7, $76, $EE
+	!byte   $B7, $76, $EE
+	!byte   $B7, $76, $EE
+	!byte   $87, $70, $EF
+	!byte   $87, $70, $E7
+
+* = $2080
+; Sprite #2
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $0E, $00
+	!byte   $00, $0E, $00
+	!byte   $F0, $0E, $3F
+	!byte   $F0, $0E, $7F
+	!byte   $39, $FE, $71
+	!byte   $39, $FE, $71
+	!byte   $3B, $FE, $71
+	!byte   $3B, $8E, $71
+	!byte   $3B, $8E, $71
+	!byte   $3B, $8E, $71
+	!byte   $3B, $8E, $71
+	!byte   $3B, $8E, $71
+	!byte   $F3, $FE, $7F
+	!byte   $F1, $FE, $3F
+
+* = $20C0
+; Sprite #3
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $8F, $F0, $FE
+	!byte   $8F, $F1, $FE
+	!byte   $CE, $39, $C7
+	!byte   $CE, $39, $C7
+	!byte   $CE, $39, $C7
+	!byte   $CE, $01, $FF
+	!byte   $CE, $01, $FF
+	!byte   $CE, $01, $C0
+	!byte   $CE, $01, $C0
+	!byte   $CE, $01, $C0
+	!byte   $8E, $01, $FC
+	!byte   $8E, $00, $FC
+
+* = $2100
+; Sprite #4
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $C0, $00
+	!byte   $7F, $E0, $00
+	!byte   $7F, $F0, $00
+	!byte   $7F, $F8, $01
+	!byte   $7F, $FF, $FF
+	!byte   $3F, $FF, $FF
+	!byte   $1F, $FF, $FF
+	!byte   $0F, $FF, $FF
+	!byte   $07, $FF, $FF
+	!byte   $03, $FF, $FF
+	!byte   $01, $FF, $FF
+	!byte   $00, $FF, $FF
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+
+* = $2140
+; Sprite #5
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $00, $00, $00
+	!byte   $00, $FF, $C0
+	!byte   $00, $FF, $E0
+	!byte   $00, $FF, $F0
+	!byte   $00, $FF, $F8
+	!byte   $00, $FF, $FC
+	!byte   $00, $FF, $FE
+	!byte   $38, $00, $00
+	!byte   $7C, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FC, $00, $00
+	!byte   $F8, $00, $00
+	!byte   $F0, $00, $00
+	!byte   $E0, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+
+* = $2180
+; Sprite #6
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $00, $FF, $FF
+	!byte   $01, $FF, $FF
+	!byte   $03, $FF, $FF
+	!byte   $07, $FF, $FF
+	!byte   $0F, $FF, $FF
+	!byte   $1F, $FF, $FF
+	!byte   $3F, $FF, $FF
+	!byte   $7F, $FF, $FF
+	!byte   $7F, $F8, $01
+	!byte   $7F, $F0, $00
+	!byte   $7F, $E0, $00
+	!byte   $7F, $C0, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+	!byte   $7F, $80, $00
+
+* = $21C0
+; Sprite #7
+; Single color mode, BG color: 6, Sprite color: 14
+	!byte   $00, $00, $00
+	!byte   $00, $00, $00
+	!byte   $E0, $00, $00
+	!byte   $F0, $00, $00
+	!byte   $F8, $00, $00
+	!byte   $FC, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $FE, $00, $00
+	!byte   $7C, $00, $00
+	!byte   $38, $00, $00
+	!byte   $00, $FF, $FE
+	!byte   $00, $FF, $FC
+	!byte   $00, $FF, $F8
+	!byte   $00, $FF, $F0
+	!byte   $00, $FF, $E0
+	!byte   $00, $FF, $C0
+	!byte   $00, $00, $00
+
+; Start of instructions
+* = $C000
+
+; Set screen color
+LDA #$0B
+STA $D020
+; Set screen border color
+LDA #$00
+STA $D021
+
+; Set sprite pointer for sprite 0 to $#20, because our sprites starts at $C000
+LDA #$80     ; load pointer to sprite data
+STA $07F8    ; set sprite pointer for sprite 0
+LDA #$81     ; load pointer to sprite data
+STA $07F9
+LDA #$82     ; load pointer to sprite data
+STA $07FA
+LDA #$83     ; load pointer to sprite data
+STA $07FB
+LDA #$84     ; load pointer to sprite data
+STA $07FC
+LDA #$85     ; load pointer to sprite data
+STA $07FD
+LDA #$86     ; load pointer to sprite data
+STA $07FE
+LDA #$87     ; load pointer to sprite datasys 
+STA $07FF
+
+; Initialize sprite positions
+LDA #100
+STA $D000  ; sprite 0 X-coordinate
+ADC #24
+STA $D002  ; sprite 1 X-coordinate
+STA $D008  ; sprite 4 X-coordinate
+STA $D00C  ; sprite 6 X-coordinate
+ADC #24
+STA $D004  ; sprite 2 X-coordinate
+STA $D00A  ; sprite 5 X-coordinate
+STA $D00E  ; sprite 7 X-coordinate
+ADC #24
+STA $D006  ; sprite 3 X-coordinate
+
+STA $D001  ; sprite 0 Y-coordinate
+STA $D003  ; sprite 1 Y-coordinate
+STA $D005  ; sprite 2 Y-coordinate
+STA $D007  ; sprite 3 Y-coordinate
+SBC #15
+STA $D009  ; sprite 4 Y-coordinate
+STA $D00B  ; sprite 5 Y-coordinate
+SBC #21
+STA $D00D  ; sprite 6 Y-coordinate
+STA $D00F  ; sprite 7 Y-coordinate
+
+LDA #%11111111  ; All bits are set, enabling all sprites
+STA $D015
+
+; Set sprite color (e.g., 14 as per your sprite definition)
+LDA #1
+@initializeColorsLoop:
+	STA $D027,X
+	INX
+	CPX #8              ; Check if we've stored 8 times
+	BNE @initializeColorsLoop
+	STA $F0 ; Store the last used color so it always updates fresh
+
+; Zero-page variables
+
+LDA #1
+STA $F0      ; Last sprite color (used in color switching)
+
+LDA #0
+STA $F1      ; 
+
+LDA #0  	 ; 0 means right initially
+STA $FA		 ; Flag we set in the zero page (for horizontal movement)
+
+LDA #0       ; 0 means upwards initially
+STA $FB		 ; Flag we set in the zero page (for vertical movement)
+
+LDA #2      
+STA $FC		 ; Horizontal speed
+
+LDA #0       
+STA $FD		 ; Horizontal frame counter
+
+LDA #2
+STA $FE		 ; Vertical speed
+
+LDA #0
+STA $FF		 ; Vertical frame counter
+
+; Begin program
+
+LDA #$20 ; Load accumulator with space character screen code
+LDX #$00 ; Clear the X register
+@clearScreen:
+    STA $0400, X ; Store accumulator (space character) at screen memory
+    STA $0500, X
+    STA $0600, X
+    STA $06E8, X
+    INX         ; Increment X register
+    BNE @clearScreen ; Repeat until X register overflows (256 iterations)         
+
+@mainLoop
+    LDA $D012
+    CMP #$FF ; See if Raster is at 255
+    BEQ @tick
+    JMP @mainLoop
+
+@moveSpriteHorizontal
+	LDA #0
+	STA $FD ; Reset counter
+	LDA $FA ; Load direction
+	BEQ @spriteRight
+	JMP @spriteLeft
+
+@moveSpriteVertical
+	LDA #0
+	STA $FF ; Reset counter
+    LDA $FB  ; Load direction
+    BEQ @spriteUpLinker
+    JMP @spriteDown
+
+@tick
+	INC $FD
+	LDA $FD
+	CMP $FC
+	BEQ @moveSpriteHorizontal
+
+@tick2
+	INC $FF
+	LDA $FF
+	CMP $FE
+	BEQ @moveSpriteVertical
+	JMP @mainLoop
+
+@spriteRight:
+    LDA $D000 ; Sprite 0 as an anchor point
+    CLC
+    ADC #1
+    STA $D000 ; 0
+    BCC @spriteRightBlock1
+    LDX #%11111111
+    STX $F1
+    JSR @updateNinthBit
+@spriteRightBlock1:
+	LDA $D004
+    CLC
+    ADC #1
+	STA $D004 ; 2
+	STA $D00A ; 5
+	STA $D00E ; 7
+    BCC @spriteRightBlock2
+    LDX #%10101100
+	STX $F1
+    JSR @updateNinthBit
+@spriteRightBlock2:
+	LDA $D002
+    CLC
+    ADC #1
+    STA $D002 ; 1
+	STA $D008 ; 4
+	STA $D00C ; 6
+    BCC @spriteRightBlock3
+    LDX #%11111110
+	STX $F1
+    JSR @updateNinthBit
+@spriteRightBlock3:
+    LDA $D006
+    CLC
+    ADC #1
+	STA $D006 ; 3
+    BCC @spriteRightBlock4
+    LDX #%00001000
+	STX $F1
+    JSR @updateNinthBit
+@spriteRightBlock4:
+	LDA $D006
+    CMP #64 ; Right-most sprite -- screen touch check, is X passing the wall?
+    BCC @spriteRightBlock5
+    JSR @checkNinthBitRightBoundary
+@spriteRightBlock5:
+    JMP @tick2
+
+@spriteUpLinker
+	JMP @spriteUp
+
+@updateNinthBit
+	LDA $F1
+	STA $D010
+	RTS
+
+@spriteLeft
+	LDA $D000
+	SEC
+	SBC #1
+	STA $D000
+	BCS @spriteLeftBlock1
+	LDX #%11111110
+	STX $F1
+	JSR @updateNinthBit ; Boundary crossing check
+@spriteLeftBlock1:
+	CMP #25 ; Left-most sprite -- screen touch check
+	BCS @spriteLeftBlock2
+	JSR @checkNinthBitLeftBoundary
+@spriteLeftBlock2:
+    LDA $D002
+	SEC
+	SBC #1
+	STA $D002 ; 1
+	STA $D008 ; 4
+	STA $D00C ; 6
+	BCS @spriteLeftBlock3
+	LDX #%10101100
+	STX $F1
+	JSR @updateNinthBit
+@spriteLeftBlock3:
+    LDA $D004
+	SEC
+	SBC #1
+	STA $D004 ; 2
+	STA $D00A ; 5
+	STA $D00E ; 7
+	BCS @spriteLeftBlock4
+	LDX #%00001000
+	STX $F1
+	JSR @updateNinthBit
+@spriteLeftBlock4:
+    LDA $D006
+	SEC
+	SBC #1
+	STA $D006 ; 3
+	BCS @spriteLeftBlock5
+	LDX #%00000000
+	STX $F1
+	JSR @updateNinthBit
+@spriteLeftBlock5:
+    JMP @tick2
+
+@mainLoopLinker
+	JMP @mainLoop
+
+@checkNinthBitLeftBoundary ; We check the ninth bit to see if we have hit the wall going left
+	LDA $D010
+	AND #%00000001
+	CMP #%00000001
+	BEQ @checkNinthBitLeft1
+	JSR @hitLeft
+@checkNinthBitLeft1:
+	RTS
+
+@checkNinthBitRightBoundary ; We check the ninth bit to see if we have hit the wall going right
+	LDA $D010
+	AND #%00001000
+	CMP #%00001000
+	BNE @checkNinthBitRight1
+	JSR @hitRight
+@checkNinthBitRight1:
+	RTS
+
+@spriteDown
+    LDA $D001
+    CLC
+    ADC #1
+    STA $D001
+    STA $D003
+    STA $D005
+    STA $D007
+    LDA $D009
+    CLC
+    ADC #1
+    STA $D009
+    STA $D00B
+    LDA $D00D
+    CLC
+    ADC #1
+    STA $D00D
+    STA $D00F
+    LDA $D001
+    CMP #229 ; bottom of screen (> 230 is obscured by border)
+    BCS @hitBottom
+    JMP @mainLoopLinker
+
+@spriteUp
+    LDA $D001
+    SBC #1
+    STA $D001
+    STA $D003
+    STA $D005
+    STA $D007
+    LDA $D009
+    SBC #1
+    STA $D009
+    STA $D00B
+    LDA $D00D
+    SBC #1
+    STA $D00D
+    STA $D00F
+    LDA $D00D
+    CMP #49 ; top of screen (< 50 is obscured by border)
+    BCC @hitTop
+    JMP @mainLoopLinker
+
+@hitLeft
+    LDA #0  ; Shift direction Right
+    STA $FA
+    JSR @getNewSpriteColor
+	RTS
+
+@hitRight
+    LDA #1  ; Shift direction left
+    STA $FA
+    JSR @getNewSpriteColor
+	RTS
+
+@hitTop
+    LDA #1  ; Shift direction down
+    STA $FB
+    JSR @getNewSpriteColor
+    JMP @mainLoopLinker
+
+@hitBottom
+    LDA #0  ; Shift direction up
+    STA $FB
+    JSR @getNewSpriteColor
+    JMP @mainLoopLinker
+
+@getNewSpriteColor
+	LDA $DC04 ; Memory location $D41B is the raster scan line counter
+	AND #%00001111
+
+	CMP $F0 ; Check against last color
+	BEQ @getNewSpriteColor
+
+	CMP #0 ; Exclude black/greys
+	BEQ @getNewSpriteColor
+	CMP #11
+	BEQ @getNewSpriteColor
+	CMP #12
+	BEQ @getNewSpriteColor
+	CMP #15
+	BEQ @getNewSpriteColor
+	LDX #0              ; Initialize index
+@updateColorsLoop:
+	STA $D027,X
+	INX
+	CPX #8              ; Check if we've stored 8 times
+	BNE @updateColorsLoop
+	STA $F0 ; Store the last used color so it always updates fresh
+	RTS
